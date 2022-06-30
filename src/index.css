@@ -1,13 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+  color: rgb(41, 41, 41);
+  font-weight: 300;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.wrapper {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.header__logo {
+  text-transform: uppercase;
+}
+
+.menu,
+.menu__item {
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu__item {
+  list-style: none;
+  margin-right: 2rem;
+  padding-bottom: 5px;
+  transition: 0.5s all;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+}
+
+.menu__item:last-child {
+  margin-right: 0;
+}
+
+.menu__item:hover {
+  border-bottom: 1px solid black;
+  color: black;
+}
+
+.footer {
+  text-align: center;
 }
