@@ -6,7 +6,7 @@ function showOrder(props) {
   return (
     <div className='bascket__items'>
       {props.order.map(element => (
-        <Order key={element.id} item={element}/>
+        <Order key={element.id} item={element} onDelete={props.onDelete}/>
       ))}
     </div>
   )

@@ -44,22 +44,35 @@ export default class App extends React.Component {
       ],
     };
     this.addItemToBascket = this.addItemToBascket.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
   }
 
   render() {
     return (
       <div className='wrapper'>
-        <Header order={this.state.order}/>
+        <Header order={this.state.order} onDelete={this.deleteItem}/>
         <Items items={this.state.items} addItem={this.addItemToBascket} />
         <Footer />
       </div>
     )
   }
 
+  deleteItem(id) {
+    this.setState({
+      order: this.state.order.filter(element => {
+        if (element.id !== id) {
+          return true;
+        }
+      })
+    });
+  }
+
   addItemToBascket(item) {
-    this.state.order.push(item);
-    this.setState(state => ({
-      order: state.order,
-    }));
+    if (!this.state.order.includes(item)) {
+      this.state.order.push(item);
+      this.setState(state => ({
+        order: state.order,
+      }));
+    }
   }
 }
