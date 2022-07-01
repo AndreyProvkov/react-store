@@ -9,6 +9,7 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       order: [],
+      currentItems: [],
       items: [
         {
           id: 1,
@@ -44,19 +45,36 @@ export default class App extends React.Component {
         }
       ],
     };
+    this.state.currentItems = this.state.items;
     this.addItemToBasket = this.addItemToBasket.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
+    this.selectCategories = this.selectCategories.bind(this);
   }
 
   render() {
     return (
       <div className='wrapper'>
         <Header order={this.state.order} onDelete={this.deleteItem}/>
-        <Categories />
-        <Items items={this.state.items} addItem={this.addItemToBasket} />
+        <Categories selectCategories={this.selectCategories}/>
+        <Items items={this.state.currentItems} addItem={this.addItemToBasket} />
         <Footer />
       </div>
     )
+  }
+
+  selectCategories(category) {
+    if (category === 'all') {
+      this.setState({
+        currentItems: this.state.items
+      });
+      return;
+    }
+
+    this.setState({
+      currentItems: this.state.items.filter(element => {
+        return element.category === category;
+      })
+    })
   }
 
   deleteItem(id) {

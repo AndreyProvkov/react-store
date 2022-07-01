@@ -29,7 +29,7 @@ export default class Categories extends Component {
     return (
       <div className='categories'>
         {this.state.categories.map(element => (
-            <div className='categories__item' key={element.key}>
+            <div className='categories__item' key={element.key} onClick={() => {this.props.selectCategories(element.key)}}>
                 {element.name}
             </div>
         ))}
