@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Items from './components/Items';
 import Categories from './components/Categories';
+import ModalItem from './components/ModalItem';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -44,11 +45,15 @@ export default class App extends React.Component {
           price: 580
         }
       ],
+      selectedItem: {},
+      modal: false
     };
     this.state.currentItems = this.state.items;
     this.addItemToBasket = this.addItemToBasket.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
     this.selectCategories = this.selectCategories.bind(this);
+    this.showModal = this.showModal.bind(this);
+    this.modalToggleActive = this.modalToggleActive.bind(this);    
   }
 
   render() {
@@ -56,7 +61,12 @@ export default class App extends React.Component {
       <div className='wrapper'>
         <Header order={this.state.order} onDelete={this.deleteItem}/>
         <Categories selectCategories={this.selectCategories}/>
-        <Items items={this.state.currentItems} addItem={this.addItemToBasket} />
+        <Items items={this.state.currentItems} addItem={this.addItemToBasket} showModal={this.showModal} modalToggleActive={this.modalToggleActive}/>
+        {this.state.modal && 
+          <ModalItem 
+            addItem={this.addItemToBasket} 
+            selectedItem={this.state.selectedItem} 
+            modalToggleActive={this.modalToggleActive}/>}
         <Footer />
       </div>
     )
@@ -77,6 +87,18 @@ export default class App extends React.Component {
     })
   }
 
+  showModal(item) {
+    this.setState({
+      selectedItem: item
+    });
+  }
+
+  modalToggleActive() {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
+
   deleteItem(id) {
     this.setState({
       order: this.state.order.filter(element => {
@@ -87,12 +109,13 @@ export default class App extends React.Component {
     });
   }
 
-  addItemToBasket(item) {
+  addItemToBasket(e, item) {
     if (!this.state.order.includes(item)) {
       this.state.order.push(item);
       this.setState(state => ({
         order: state.order,
       }));
     }
+    e.stopPropagation();
   }
 }

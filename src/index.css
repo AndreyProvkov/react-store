@@ -159,27 +159,33 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
+  margin-bottom: 20px;
 }
 
-.item {
+.item,
+.modal__content {
   overflow: hidden;
   border-radius: 10px 10px 0 0;
   background-color: rgb(240, 240, 240);
   transition: .5s all;
   padding-bottom: 10px;
+  cursor: pointer;
 }
 
-.item:hover .item__img {
+.item:hover .item__img,
+.modal__content:hover .modal__img {
   transform: scale(1.05);
 }
 
-.item__img {
+.item__img,
+.modal__img {
   height: 60%;
   width: 100%;
   transition: .5s all;
 }
 
-.item__info {
+.item__info,
+.modal__info {
   height: 40%;
   display: flex;
   flex-direction: column;
@@ -189,24 +195,57 @@ body {
 }
 
 .item__title,
-.item__description {
+.item__description,
+.modal__title,
+.modal__description {
   margin: 0;
   padding: 0;
 }
 
-.item__price {
+.item__price,
+.modal__price {
   font-weight: bold;
 }
 
-.item__btn {
+.item__btn,
+.modal__btn {
   position: absolute;
   bottom: 5px;
   right: 15px;  
   transition: .3s all;
 }
 
-.item__btn:hover {
+.item__btn:hover,
+.modal__btn:hover {
   transform: scale(1.2);
+}
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(48, 48, 48, 0.918);
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 99999;
+}
+
+.modal__content {
+  width: 40%;
+  margin: auto;
+  padding: 2%;
+  border-radius: 10px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+}
+
+.modal__img,
+.modal__title,
+.modal__description {
+  margin-bottom: 10px;
 }
 
 .add-btn {

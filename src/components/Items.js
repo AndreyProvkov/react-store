@@ -7,7 +7,7 @@ export default class Items extends Component {
       <main className='main'>
         {
             this.props.items.map(element => (
-                <Item key={element.id} item={element} addItem={this.props.addItem}/>
+                <Item key={element.id} item={element} addItem={this.props.addItem} showModal={this.props.showModal} modalToggleActive={this.props.modalToggleActive}/>
             ))
         }
       </main>
