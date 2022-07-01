@@ -53,12 +53,59 @@ body {
   margin-right: -10px;
   cursor: pointer;
   transition: .5s all;
+  position: relative;
 }
 
 .bascket:hover,
 .bascket_active {
   color: red;
   transform: scale(1.5);
+}
+
+.bascket__window {
+  position: absolute;
+  width: 300px;
+  z-index: 9999;
+  right: 25px;
+  top: 55px;
+  padding: 20px;
+  padding-bottom: 0;
+  background-color: rgba(224, 224, 224, 0.966);
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.bascket__item {
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 5px 0 5px 5px;
+  min-height: 50px;
+}
+
+.bascket__img {
+  display: block;
+  width: 70px;
+  float: left;
+  margin-right: 10px;
+}
+
+.bascket__title,
+.bascket__price {
+  margin: 0;
+  padding: 0;
+}
+
+.bascket__price {
+  color: gray;
+  font-weight: bold;
+}
+
+.bascket__empty {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .main {

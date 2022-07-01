@@ -7,6 +7,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      order: [],
       items: [
         {
           id: 1,
@@ -41,16 +42,24 @@ export default class App extends React.Component {
           price: 580
         }
       ],
-    }
+    };
+    this.addItemToBascket = this.addItemToBascket.bind(this);
   }
 
   render() {
     return (
       <div className='wrapper'>
-        <Header />
-        <Items items={this.state.items} />
+        <Header order={this.state.order}/>
+        <Items items={this.state.items} addItem={this.addItemToBascket} />
         <Footer />
       </div>
     )
+  }
+
+  addItemToBascket(item) {
+    this.state.order.push(item);
+    this.setState(state => ({
+      order: state.order,
+    }));
   }
 }

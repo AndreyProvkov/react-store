@@ -8,8 +8,8 @@ export default class item extends Component {
         <div className='item__info'>
             <h3 className='item__title'>{this.props.item.title}</h3>
             <p className='item__description'>{this.props.item.description}</p>
-            <div className='item__price'>{this.props.item.price}</div>
-            <div className='item__btn add-btn'>+</div>
+            <div className='item__price'>Cost: {this.props.item.price}</div>
+            <div className='item__btn add-btn' onClick={() => this.props.addItem(this.props.item)}>+</div>
         </div>
       </div>
     )

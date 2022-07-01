@@ -1,7 +1,24 @@
 import React, { useState } from 'react'
 import { FaShoppingCart } from "react-icons/fa"
+import Order from './Order'
 
-export default function Header() {
+function showOrder(props) {
+  return (
+    <div className='bascket__items'>
+      {props.order.map(element => (
+        <Order key={element.id} item={element}/>
+      ))}
+    </div>
+  )
+}
+
+function showEmptyBascket() {
+  return (
+    <h2 className='bascket__empty'>No items</h2>
+  )
+}
+
+export default function Header(props) {
   let [bascketOpen, setBascketOpen] = useState(false);
 
   return (
@@ -15,7 +32,12 @@ export default function Header() {
           </ul>
           <FaShoppingCart onClick={() => setBascketOpen(bascketOpen = !bascketOpen)} className={`bascket ${bascketOpen && 'bascket_active'}`} />
         </nav>
-        {bascketOpen && (<div className='bascket__window'></div>)}
+        {bascketOpen && (
+          <div className='bascket__window'>
+            {
+              props.order.length > 0 ? showOrder(props) : showEmptyBascket()
+            }
+          </div>)}
     </header>
   )
 }
