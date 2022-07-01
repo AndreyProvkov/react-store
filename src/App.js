@@ -43,7 +43,7 @@ export default class App extends React.Component {
         }
       ],
     };
-    this.addItemToBascket = this.addItemToBascket.bind(this);
+    this.addItemToBasket = this.addItemToBasket.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
   }
 
@@ -51,7 +51,7 @@ export default class App extends React.Component {
     return (
       <div className='wrapper'>
         <Header order={this.state.order} onDelete={this.deleteItem}/>
-        <Items items={this.state.items} addItem={this.addItemToBascket} />
+        <Items items={this.state.items} addItem={this.addItemToBasket} />
         <Footer />
       </div>
     )
@@ -67,7 +67,7 @@ export default class App extends React.Component {
     });
   }
 
-  addItemToBascket(item) {
+  addItemToBasket(item) {
     if (!this.state.order.includes(item)) {
       this.state.order.push(item);
       this.setState(state => ({

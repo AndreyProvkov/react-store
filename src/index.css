@@ -48,7 +48,7 @@ body {
   color: black;
 }
 
-.bascket {
+.basket {
   padding: 10px;
   margin-right: -10px;
   cursor: pointer;
@@ -56,13 +56,13 @@ body {
   position: relative;
 }
 
-.bascket:hover,
-.bascket_active {
+.basket:hover,
+.basket_active {
   color: red;
   transform: scale(1.5);
 }
 
-.bascket__window {
+.basket__window {
   position: absolute;
   width: 300px;
   z-index: 9999;
@@ -76,7 +76,7 @@ body {
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 }
 
-.bascket__item {
+.basket__item {
   width: 100%;
   background-color: #fff;
   margin-bottom: 20px;
@@ -84,31 +84,32 @@ body {
   min-height: 50px;
 }
 
-.bascket__img {
+.basket__img {
   display: block;
   width: 70px;
   float: left;
   margin-right: 10px;
 }
 
-.bascket__title,
-.bascket__price {
+.basket__title,
+.basket__price {
   margin: 0;
   padding: 0;
 }
 
-.bascket__price {
+.basket__price {
   color: gray;
   font-weight: bold;
 }
 
-.bascket__empty {
+.basket__empty {
   padding: 0;
   margin: 0;
   margin-bottom: 20px;
+  font-size: 16px;
 }
 
-.bascket__trash {
+.basket__trash {
   color: rgb(165, 45, 45);
   float: right;
   position: relative;
@@ -119,9 +120,16 @@ body {
   padding: 5px;
 }
 
-.bascket__trash:hover {
+.basket__trash:hover {
   color:rgb(218, 37, 37);
   transform: scale(1.3);
+}
+
+.basket__sum {
+  color: gray;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .main {

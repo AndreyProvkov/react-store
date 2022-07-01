@@ -3,23 +3,28 @@ import { FaShoppingCart } from "react-icons/fa"
 import Order from './Order'
 
 function showOrder(props) {
+  let sum = 0;
+  props.order.forEach(element => sum += parseFloat(element.price));
   return (
-    <div className='bascket__items'>
+    <div className='basket__items'>
       {props.order.map(element => (
         <Order key={element.id} item={element} onDelete={props.onDelete}/>
       ))}
+      <div className='basket__sum'>
+        Sum cost: {sum}
+      </div>
     </div>
   )
 }
 
-function showEmptyBascket() {
+function showEmptyBasket() {
   return (
-    <h2 className='bascket__empty'>No items</h2>
+    <h2 className='basket__empty'>No items</h2>
   )
 }
 
 export default function Header(props) {
-  let [bascketOpen, setBascketOpen] = useState(false);
+  let [basketOpen, setBasketOpen] = useState(false);
 
   return (
     <header className='header'>
@@ -30,12 +35,12 @@ export default function Header(props) {
             <li className='menu__item'>Second item</li>
             <li className='menu__item'>Third item</li>
           </ul>
-          <FaShoppingCart onClick={() => setBascketOpen(bascketOpen = !bascketOpen)} className={`bascket ${bascketOpen && 'bascket_active'}`} />
+          <FaShoppingCart onClick={() => setBasketOpen(basketOpen = !basketOpen)} className={`basket ${basketOpen && 'basket_active'}`} />
         </nav>
-        {bascketOpen && (
-          <div className='bascket__window'>
+        {basketOpen && (
+          <div className='basket__window'>
             {
-              props.order.length > 0 ? showOrder(props) : showEmptyBascket()
+              props.order.length > 0 ? showOrder(props) : showEmptyBasket()
             }
           </div>)}
     </header>
