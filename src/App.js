@@ -10,30 +10,34 @@ export default class App extends React.Component {
       items: [
         {
           id: 1,
-          title: 'Title1',
-          description: 'Description1',
-          category: 'item1',
-          price: 40
+          title: 'Computer 1',
+          description: 'Powerful and quiet',
+          category: 'pc',
+          img: 'pc1.jpg',
+          price: 4000
         },
         {
           id: 2,
-          title: 'Title2',
-          description: 'Description2',
-          category: 'item2',
-          price: 50
+          title: 'Computer 2',
+          description: 'New technology',
+          category: 'pc',
+          img: 'pc2.jpg',
+          price: 5000
         },
         {
           id: 3,
-          title: 'Title3',
-          description: 'Description3',
-          category: 'item1',
+          title: 'Mouse 1',
+          description: 'Click-click',
+          category: 'mouse',
+          img: 'mouse1.jpeg',
           price: 60
         },
         {
           id: 4,
-          title: 'Title4',
-          description: 'Description4',
-          category: 'item3',
+          title: 'Monitor 1',
+          description: 'Compact',
+          category: 'monitor',
+          img: 'monitor1.jpg',
           price: 580
         }
       ],
