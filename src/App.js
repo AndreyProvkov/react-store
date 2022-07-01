@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Items from './components/Items';
+import Categories from './components/Categories';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -51,6 +52,7 @@ export default class App extends React.Component {
     return (
       <div className='wrapper'>
         <Header order={this.state.order} onDelete={this.deleteItem}/>
+        <Categories />
         <Items items={this.state.items} addItem={this.addItemToBasket} />
         <Footer />
       </div>

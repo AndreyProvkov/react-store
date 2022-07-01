@@ -11,7 +11,7 @@ function showOrder(props) {
         <Order key={element.id} item={element} onDelete={props.onDelete}/>
       ))}
       <div className='basket__sum'>
-        Sum cost: {sum}
+        Sum cost: {parseFloat(sum.toFixed(2))}
       </div>
     </div>
   )
