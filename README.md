@@ -5,6 +5,11 @@
 - Calculating the price of items in the basket;
 - Sort by category.
 
+## View
+[There](https://github.com/AndreyProvkov/react-store-to-view) you can see project files to view.
+
+[Click to view demo](https://andreyprovkov.github.io/react-store-to-view/).
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
