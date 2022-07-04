@@ -1,4 +1,4 @@
-# Store
+# React Store
 ## Store features
 - Adding, removing items to / from the basket;
 - Opening a product card;
