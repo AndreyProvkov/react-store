@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# Store
+## Store features
+- Adding, removing items to / from the basket;
+- Opening a product card;
+- Calculating the price of items in the basket;
+- Sort by category.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
