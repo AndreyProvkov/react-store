@@ -182,6 +182,9 @@ body {
   height: 60%;
   width: 100%;
   transition: .5s all;
+  object-fit: contain;
+  object-position: center;
+  background-color: black;
 }
 
 .item__info,
