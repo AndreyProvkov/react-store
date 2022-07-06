@@ -9,7 +9,7 @@ body {
 
 .wrapper {
   max-width: 1300px;
-  margin: 20px;
+  margin: 20px auto;
 }
 
 .header {
@@ -19,6 +19,7 @@ body {
   margin: auto;
   margin-top: 20px;
   text-transform: uppercase;
+  position: relative;
 }
 
 .header__nav {
@@ -66,7 +67,7 @@ body {
   position: absolute;
   width: 300px;
   z-index: 9999;
-  right: 25px;
+  right: 0;
   top: 55px;
   padding: 20px;
   padding-bottom: 0;
